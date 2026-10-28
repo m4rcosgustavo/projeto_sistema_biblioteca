@@ -12,3 +12,13 @@
 **Como resolvi:** Separei as responsabilidades entre os arquivos e as pastas do projeto, preparando a estrutura para facilitar a integração das partes desenvolvidas pelo grupo.
 
 **Próximo passo:** Integrar as rotas da aplicação, alinhar a configuração do banco de dados com os modelos e verificar se o sistema funciona corretamente.
+
+**Aluno:** Heloisa Pereira
+
+**O que foi feito:** Iniciei o desenvolvimento da camada de dados do Sistema de Biblioteca, organizando os modelos de Autor, Livro, Leitor e Empréstimo com SQLAlchemy. Também participei da configuração inicial do banco de dados SQLite e executei a aplicação para verificar seu funcionamento.
+
+**Dificuldade encontrada:** Ocorreu um erro na inicialização do banco de dados porque a função db.init_app(app) estava sendo chamada duas vezes no arquivo app.py.
+
+**Como resolvi:** Analisei o código e corrigi a inicialização duplicada, mantendo apenas uma chamada de db.init_app(app). Depois, executei novamente a aplicação e confirmei que ela iniciou corretamente.
+
+**Próximo passo:** Implementar e testar o relacionamento 1 entre Autor e Livro, conferir as chaves estrangeiras e avançar na preparação da tabela intermediária de empréstimos.
