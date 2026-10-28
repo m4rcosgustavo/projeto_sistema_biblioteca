@@ -22,3 +22,13 @@
 **Como resolvi:** Analisei o código e corrigi a inicialização duplicada, mantendo apenas uma chamada de db.init_app(app). Depois, executei novamente a aplicação e confirmei que ela iniciou corretamente.
 
 **Próximo passo:** Implementar e testar o relacionamento 1 entre Autor e Livro, conferir as chaves estrangeiras e avançar na preparação da tabela intermediária de empréstimos.
+
+Aluno: Maria Luiza
+
+O que foi feito: Desenvolvi o template base da aplicação do Sistema de Biblioteca, criando a estrutura inicial da interface com cabeçalho, menu de navegação, área de conteúdo e rodapé. Também preparei a estilização com CSS para padronizar a aparência das páginas e ajustei a rota inicial do Flask para renderizar o template da página inicial.
+
+Dificuldade encontrada: Os arquivos base.html e style.css estavam vazios, então foi necessário preparar a estrutura inicial da interface.
+
+Como resolvi: Criei o template base utilizando HTML e Jinja2, adicionei os estilos em CSS e preparei a página inicial para utilizar o template.
+
+Próximo passo: Desenvolver as telas de cadastro, edição e listagem de autores, livros e leitores, integrando-as às rotas da aplicação.
