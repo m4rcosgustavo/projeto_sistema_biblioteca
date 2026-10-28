@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, render_template
 from database import db
 from models import Autor, Livro, Leitor, Emprestimo
 
@@ -14,7 +14,7 @@ def criar_app():
 
     @app.route("/")
     def inicio():
-        return "Sistema de Biblioteca funcionando!"
+        return render_template("inicio.html")
 
     return app
 
