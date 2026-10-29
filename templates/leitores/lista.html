@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Leitores | Biblioteca{% endblock %}
+
+{% block content %}
+
+<section class="cabecalho-pagina">
+
+    <div>
+        <p class="sobretitulo">CADASTROS</p>
+        <h1>Leitores</h1>
+        <p class="descricao">
+            Gerencie as pessoas cadastradas na biblioteca.
+        </p>
+    </div>
+
+    <a class="botao" href="{{ url_for('leitores.novo_leitor') }}">
+        + Novo leitor
+    </a>
+
+</section>
+
+{% if leitores %}
+
+<div class="tabela-wrapper">
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Empréstimos</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for leitor in leitores %}
+
+            <tr>
+                <td>{{ leitor.nome }}</td>
+                <td>{{ leitor.email }}</td>
+                <td>{{ leitor.emprestimos|length }}</td>
+
+                <td class="acoes">
+
+                    <a class="link-acao"
+                       href="{{ url_for('leitores.editar_leitor', id=leitor.id) }}">
+                        Editar
+                    </a>
+
+                    <form class="form-excluir"
+                          method="POST"
+                          action="{{ url_for('leitores.excluir_leitor', id=leitor.id) }}"
+                          onsubmit="return confirm('Deseja realmente excluir este leitor?')">
+
+                        <button class="botao-perigo" type="submit">
+                            Excluir
+                        </button>
+
+                    </form>
+
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% else %}
+
+<div class="vazio">
+
+    <h2>Nenhum leitor cadastrado</h2>
+
+    <p>Cadastre o primeiro leitor.</p>
+
+    <a class="botao" href="{{ url_for('leitores.novo_leitor') }}">
+        Cadastrar leitor
+    </a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

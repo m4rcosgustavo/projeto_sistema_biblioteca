@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ 'Editar' if leitor else 'Novo' }} leitor | Biblioteca
+{% endblock %}
+
+{% block content %}
+
+<section class="form-card">
+
+    <a class="voltar" href="{{ url_for('leitores.listar_leitores') }}">
+        ← Voltar para leitores
+    </a>
+
+    <p class="sobretitulo">CADASTROS</p>
+
+    <h1>
+        {{ 'Editar leitor' if leitor else 'Cadastrar leitor' }}
+    </h1>
+
+    <p class="descricao">
+        Preencha os dados da pessoa leitora.
+    </p>
+
+    <form method="POST">
+
+        <label for="nome">Nome *</label>
+
+        <input
+            id="nome"
+            name="nome"
+            maxlength="100"
+            required
+            value="{{ leitor.nome if leitor else '' }}"
+        >
+
+        <label for="email">E-mail *</label>
+
+        <input
+            id="email"
+            name="email"
+            type="email"
+            maxlength="120"
+            required
+            value="{{ leitor.email if leitor else '' }}"
+        >
+
+        <div class="botoes-form">
+
+            <button type="submit">Salvar</button>
+
+            <a class="botao botao-secundario"
+               href="{{ url_for('leitores.listar_leitores') }}">
+                Cancelar
+            </a>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

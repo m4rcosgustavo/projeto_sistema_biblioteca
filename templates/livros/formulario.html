@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ 'Editar' if livro else 'Novo' }} livro | Biblioteca
+{% endblock %}
+
+{% block content %}
+
+<section class="form-card">
+
+    <a class="voltar" href="{{ url_for('livros.listar_livros') }}">
+        ← Voltar para livros
+    </a>
+
+    <p class="sobretitulo">ACERVO</p>
+
+    <h1>
+        {{ 'Editar livro' if livro else 'Cadastrar livro' }}
+    </h1>
+
+    <p class="descricao">
+        Informe os dados do livro e selecione seu autor.
+    </p>
+
+    {% if not autores %}
+
+        <div class="alerta erro">
+            Cadastre pelo menos um autor antes de cadastrar um livro.
+        </div>
+
+        <a class="botao" href="{{ url_for('autores.novo_autor') }}">
+            Cadastrar autor
+        </a>
+
+    {% else %}
+
+        <form method="POST">
+
+            <label for="titulo">Título *</label>
+
+            <input
+                id="titulo"
+                name="titulo"
+                maxlength="150"
+                required
+                value="{{ livro.titulo if livro else '' }}"
+            >
+
+            <label for="autor_id">Autor *</label>
+
+            <select id="autor_id" name="autor_id" required>
+
+                <option value="">Selecione um autor</option>
+
+                {% for autor in autores %}
+
+                    <option
+                        value="{{ autor.id }}"
+                        {% if livro and livro.autor_id == autor.id %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ autor.nome }}
+                    </option>
+
+                {% endfor %}
+
+            </select>
+
+            <label for="genero">Gênero</label>
+
+            <input
+                id="genero"
+                name="genero"
+                maxlength="60"
+                value="{{ livro.genero if livro and livro.genero else '' }}"
+            >
+
+            <label for="ano_publicacao">Ano de publicação</label>
+
+            <input
+                id="ano_publicacao"
+                name="ano_publicacao"
+                type="number"
+                min="0"
+                max="2100"
+                value="{{ livro.ano_publicacao if livro and livro.ano_publicacao else '' }}"
+            >
+
+            <div class="botoes-form">
+
+                <button type="submit">Salvar</button>
+
+                <a class="botao botao-secundario"
+                   href="{{ url_for('livros.listar_livros') }}">
+                    Cancelar
+                </a>
+
+            </div>
+
+        </form>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

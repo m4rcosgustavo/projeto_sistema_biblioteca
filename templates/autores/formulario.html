@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ 'Editar' if autor else 'Novo' }} autor | Biblioteca
+{% endblock %}
+
+{% block content %}
+
+<section class="form-card">
+
+    <a class="voltar" href="{{ url_for('autores.listar_autores') }}">
+        ← Voltar para autores
+    </a>
+
+    <p class="sobretitulo">CADASTROS</p>
+
+    <h1>
+        {{ 'Editar autor' if autor else 'Cadastrar autor' }}
+    </h1>
+
+    <p class="descricao">
+        Preencha as informações do autor.
+    </p>
+
+    <form method="POST">
+
+        <label for="nome">Nome *</label>
+
+        <input
+            id="nome"
+            name="nome"
+            maxlength="100"
+            required
+            value="{{ autor.nome if autor else '' }}"
+            placeholder="Nome completo"
+        >
+
+        <label for="nacionalidade">Nacionalidade</label>
+
+        <input
+            id="nacionalidade"
+            name="nacionalidade"
+            maxlength="60"
+            value="{{ autor.nacionalidade if autor and autor.nacionalidade else '' }}"
+            placeholder="Ex.: Brasileira"
+        >
+
+        <div class="botoes-form">
+
+            <button type="submit">Salvar</button>
+
+            <a class="botao botao-secundario"
+               href="{{ url_for('autores.listar_autores') }}">
+                Cancelar
+            </a>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

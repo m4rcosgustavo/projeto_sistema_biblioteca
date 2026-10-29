@@ -1,32 +1,92 @@
-
 {% extends "base.html" %}
 
-{% block title %}Autores | Sistema de Biblioteca{% endblock %}
+{% block title %}Autores | Biblioteca{% endblock %}
 
 {% block content %}
-    <section>
-        <h1>Autores cadastrados</h1>
 
-        {% if autores %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Nacionalidade</th>
-                    </tr>
-                </thead>
+<section class="cabecalho-pagina">
 
-                <tbody>
-                    {% for autor in autores %}
-                        <tr>
-                            <td>{{ autor.nome }}</td>
-                            <td>{{ autor.nacionalidade or "Não informada" }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>Nenhum autor cadastrado.</p>
-        {% endif %}
-    </section>
+    <div>
+        <p class="sobretitulo">CADASTROS</p>
+        <h1>Autores</h1>
+        <p class="descricao">
+            Consulte e organize os autores da biblioteca.
+        </p>
+    </div>
+
+    <a class="botao" href="{{ url_for('autores.novo_autor') }}">
+        + Novo autor
+    </a>
+
+</section>
+
+{% if autores %}
+
+<div class="tabela-wrapper">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nacionalidade</th>
+                <th>Livros</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for autor in autores %}
+
+            <tr>
+                <td>{{ autor.nome }}</td>
+
+                <td>{{ autor.nacionalidade or "Não informada" }}</td>
+
+                <td>{{ autor.livros|length }}</td>
+
+                <td class="acoes">
+
+                    <a class="link-acao"
+                       href="{{ url_for('autores.editar_autor', id=autor.id) }}">
+                        Editar
+                    </a>
+
+                    <form class="form-excluir"
+                          method="POST"
+                          action="{{ url_for('autores.excluir_autor', id=autor.id) }}"
+                          onsubmit="return confirm('Deseja realmente excluir este autor?')">
+
+                        <button class="botao-perigo" type="submit">
+                            Excluir
+                        </button>
+
+                    </form>
+
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+{% else %}
+
+<div class="vazio">
+
+    <h2>Nenhum autor cadastrado</h2>
+
+    <p>Comece adicionando o primeiro autor.</p>
+
+    <a class="botao" href="{{ url_for('autores.novo_autor') }}">
+        Cadastrar autor
+    </a>
+
+</div>
+
+{% endif %}
+
 {% endblock %}

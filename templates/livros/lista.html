@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Livros | Biblioteca{% endblock %}
+
+{% block content %}
+
+<section class="cabecalho-pagina">
+
+    <div>
+        <p class="sobretitulo">ACERVO</p>
+        <h1>Livros</h1>
+        <p class="descricao">
+            Consulte os livros e seus respectivos autores.
+        </p>
+    </div>
+
+    <a class="botao" href="{{ url_for('livros.novo_livro') }}">
+        + Novo livro
+    </a>
+
+</section>
+
+{% if livros %}
+
+<div class="tabela-wrapper">
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for livro in livros %}
+
+            <tr>
+                <td>{{ livro.titulo }}</td>
+                <td>{{ livro.autor.nome }}</td>
+                <td>{{ livro.genero or 'Não informado' }}</td>
+                <td>{{ livro.ano_publicacao or '—' }}</td>
+
+                <td class="acoes">
+
+                    <a class="link-acao"
+                       href="{{ url_for('livros.editar_livro', id=livro.id) }}">
+                        Editar
+                    </a>
+
+                    <form class="form-excluir"
+                          method="POST"
+                          action="{{ url_for('livros.excluir_livro', id=livro.id) }}"
+                          onsubmit="return confirm('Deseja realmente excluir este livro?')">
+
+                        <button class="botao-perigo" type="submit">
+                            Excluir
+                        </button>
+
+                    </form>
+
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% else %}
+
+<div class="vazio">
+
+    <h2>Nenhum livro cadastrado</h2>
+
+    <p>Adicione o primeiro livro ao acervo.</p>
+
+    <a class="botao" href="{{ url_for('livros.novo_livro') }}">
+        Cadastrar livro
+    </a>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

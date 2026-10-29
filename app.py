@@ -10,12 +10,16 @@ from controllers import (
     emprestimos_bp
 )
 
+# Importa os controllers para registrar suas rotas
 import controllers.autores
+import controllers.livros
+import controllers.leitores
 
 
 def criar_app():
     app = Flask(__name__)
 
+    app.config["SECRET_KEY"] = "biblioteca-chave-local"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///biblioteca.db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
