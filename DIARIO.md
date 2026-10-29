@@ -57,3 +57,15 @@
 **Como resolvi:** Implementei a rota `GET /autores/`, utilizei o modelo `Autor` para consultar os registros no banco de dados e criei o template `templates/autores/lista.html`. Depois, conferi as rotas registradas pelo Flask e testei a aplicação no navegador.
 
 **Próximo passo:** Dar continuidade à integração dos controladores de livros, leitores e empréstimos, testar as funcionalidades e verificar a integração com as demais partes do sistema.
+
+## Registro 6 — Quinta-feira (29/10/2026)
+
+**Aluno:** Heloisa Pereira
+
+**O que foi feito:** Criei um teste automatizado para verificar o relacionamento 1:N entre Autor e Livro, confirmando que um autor pode possuir vários livros associados.
+
+**Dificuldade encontrada:** Era necessário verificar se o relacionamento funcionava com mais de um livro para o mesmo autor.
+
+**Como resolvi:** Utilizei um teste com dois livros vinculados ao mesmo autor e verificações das chaves estrangeiras e da coleção de livros do autor.
+
+**Próximo passo:** Implementar e testar o relacionamento entre Leitor, Livro e Empréstimo.
