@@ -32,3 +32,13 @@ Dificuldade encontrada: Os arquivos base.html e style.css estavam vazios, então
 Como resolvi: Criei o template base utilizando HTML e Jinja2, adicionei os estilos em CSS e preparei a página inicial para utilizar o template.
 
 Próximo passo: Desenvolver as telas de cadastro, edição e listagem de autores, livros e leitores, integrando-as às rotas da aplicação.
+
+**Aluno:** Jullyane Sandra
+
+**O que foi feito:** Realizei o planejamento inicial da minha parte no Sistema de Biblioteca e comecei a documentação do projeto no README.md, descrevendo o objetivo, as tecnologias utilizadas, a estrutura dos arquivos e as instruções para executar a aplicação.
+
+**Dificuldade encontrada:** Organizar as informações do projeto enquanto algumas funcionalidades ainda estavam em desenvolvimento.
+
+**Como resolvi:** Consultei os arquivos existentes no repositório e organizei as informações para documentar a estrutura e as funcionalidades previstas para o sistema.
+
+**Próximo passo:** Preparar o fluxo de empréstimos, incluindo consultas de livros e leitores, registro e remoção de empréstimos.
