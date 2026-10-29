@@ -1,7 +1,16 @@
-
 from flask import Flask, render_template
+
 from database import db
 from models import Autor, Livro, Leitor, Emprestimo
+
+from controllers import (
+    autores_bp,
+    livros_bp,
+    leitores_bp,
+    emprestimos_bp
+)
+
+import controllers.autores
 
 
 def criar_app():
@@ -11,6 +20,11 @@ def criar_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     db.init_app(app)
+
+    app.register_blueprint(autores_bp)
+    app.register_blueprint(livros_bp)
+    app.register_blueprint(leitores_bp)
+    app.register_blueprint(emprestimos_bp)
 
     @app.route("/")
     def inicio():
