@@ -80,4 +80,4 @@
 
 **Como resolvi:** Verifiquei os imports e os Blueprints, executei a aplicação e testei as funcionalidades pelo navegador. Todas as páginas testadas funcionaram normalmente.
 
-**Próximo passo:** Realizar a revisão geral do sistema, verificar as funcionalidades de empréstimos e corrigir possíveis problemas antes da entrega.
+**Próximo passo:** Realizar a revisão geral do sistema, verificar as funcionalidades de empréstimos e corrigir possíveis problemas antes da entrega do projeto.
