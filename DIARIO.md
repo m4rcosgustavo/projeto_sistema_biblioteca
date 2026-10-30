@@ -81,3 +81,19 @@
 **Como resolvi:** Verifiquei os imports e os Blueprints, executei a aplicação e testei as funcionalidades pelo navegador. Todas as páginas testadas funcionaram normalmente.
 
 **Próximo passo:** Realizar a revisão geral do sistema, verificar as funcionalidades de empréstimos e corrigir possíveis problemas antes da entrega do projeto.
+
+
+## 30/10/2026 — Maria Luiza
+
+**O que foi feito:**
+Desenvolvimento das interfaces de empréstimos, criação da tela de listagem, organização do formulário e integração com os modelos de livros, leitores e empréstimos.
+
+**Dificuldade encontrada:**
+Organizar a exibição dos dados relacionados entre leitores, livros e empréstimos.
+
+**Como resolvi:**
+Utilizei os relacionamentos existentes nos modelos SQLAlchemy para exibir as informações nas telas.
+
+**Próximo passo:**
+Testar as interfaces integradas à funcionalidade de registro de empréstimos.
+
