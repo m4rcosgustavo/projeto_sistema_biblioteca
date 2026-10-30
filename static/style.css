@@ -362,3 +362,41 @@ button.botao-perigo:hover {
     }
 }
 
+
+/* Tela de empréstimos */
+
+.status-pendente {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #fff1d6;
+    color: #8a611c;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.tabela-wrapper {
+    margin-top: 20px;
+}
+
+.form-card {
+    margin-top: 10px;
+}
+
+.form-card select {
+    cursor: pointer;
+}
+
+.form-card button {
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .tabela-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}

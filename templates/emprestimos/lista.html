@@ -1,0 +1,73 @@
+
+{% extends "base.html" %}
+
+{% block title %}Empréstimos{% endblock %}
+
+{% block content %}
+
+<div class="cabecalho-pagina">
+    <div>
+        <p class="sobretitulo">BIBLIOTECA</p>
+        <h1>Empréstimos</h1>
+        <p class="descricao">
+            Consulte os livros emprestados e seus respectivos leitores.
+        </p>
+    </div>
+
+    <a href="{{ url_for('emprestimos.novo_emprestimo') }}"
+       class="botao">
+        Novo empréstimo
+    </a>
+</div>
+
+{% if emprestimos %}
+
+<div class="tabela-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Leitor</th>
+                <th>Livro</th>
+                <th>Data do empréstimo</th>
+                <th>Data da devolução</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for emprestimo in emprestimos %}
+            <tr>
+                <td>{{ emprestimo.leitor.nome }}</td>
+                <td>{{ emprestimo.livro.titulo }}</td>
+
+                <td>
+                    {{ emprestimo.data_emprestimo.strftime('%d/%m/%Y') }}
+                </td>
+
+                <td>
+                    {% if emprestimo.data_devolucao %}
+                        {{ emprestimo.data_devolucao.strftime('%d/%m/%Y') }}
+                    {% else %}
+                        <span class="status-pendente">Pendente</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% else %}
+
+<div class="vazio">
+    <h2>Nenhum empréstimo encontrado</h2>
+    <p>Os empréstimos cadastrados aparecerão nesta página.</p>
+
+    <a href="{{ url_for('emprestimos.novo_emprestimo') }}"
+       class="botao">
+        Registrar primeiro empréstimo
+    </a>
+</div>
+
+{% endif %}
+
+{% endblock %}

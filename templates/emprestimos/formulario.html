@@ -1,41 +1,66 @@
+
 {% extends "base.html" %}
 
 {% block title %}Novo Empréstimo{% endblock %}
 
 {% block content %}
 
-<h1>Novo Empréstimo</h1>
+<a href="{{ url_for('emprestimos.listar_emprestimos') }}"
+   class="voltar">
+    ← Voltar para empréstimos
+</a>
 
-<form method="POST">
+<div class="form-card">
 
-    <label>Selecione o livro:</label>
-    <select name="livro_id" required>
-        <option value="">Escolha um livro</option>
+    <p class="sobretitulo">BIBLIOTECA</p>
 
-        {% for livro in livros %}
-        <option value="{{ livro.id }}">
-            {{ livro.titulo }}
-        </option>
-        {% endfor %}
-    </select>
+    <h1>Novo Empréstimo</h1>
 
-    <br><br>
+    <p class="descricao">
+        Selecione o leitor e o livro para realizar o empréstimo.
+    </p>
 
-    <label>Selecione o leitor:</label>
-    <select name="leitor_id" required>
-        <option value="">Escolha um leitor</option>
+    <form method="POST">
 
-        {% for leitor in leitores %}
-        <option value="{{ leitor.id }}">
-            {{ leitor.nome }}
-        </option>
-        {% endfor %}
-    </select>
+        <label for="livro_id">Livro</label>
 
-    <br><br>
+        <select name="livro_id" id="livro_id" required>
+            <option value="">Selecione um livro</option>
 
-    <button type="submit">Registrar empréstimo</button>
+            {% for livro in livros %}
+            <option value="{{ livro.id }}">
+                {{ livro.titulo }}
+            </option>
+            {% endfor %}
+        </select>
 
-</form>
+        <label for="leitor_id">Leitor</label>
+
+        <select name="leitor_id" id="leitor_id" required>
+            <option value="">Selecione um leitor</option>
+
+            {% for leitor in leitores %}
+            <option value="{{ leitor.id }}">
+                {{ leitor.nome }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <div class="botoes-form">
+
+            <button type="submit">
+                Registrar empréstimo
+            </button>
+
+            <a href="{{ url_for('emprestimos.listar_emprestimos') }}"
+               class="botao botao-secundario">
+                Cancelar
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
 
 {% endblock %}
