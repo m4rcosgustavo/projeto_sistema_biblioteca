@@ -69,3 +69,15 @@
 **Como resolvi:** Utilizei um teste com dois livros vinculados ao mesmo autor e verificações das chaves estrangeiras e da coleção de livros do autor.
 
 **Próximo passo:** Implementar e testar o relacionamento entre Leitor, Livro e Empréstimo.
+
+## Registro 7 — Sexta-feira (30/10/2026)
+
+**Data:** Marcos Gustavo da Silva Araújo
+
+**O que foi feito:** Realizei a integração dos controllers de autores, livros, leitores e empréstimos com a aplicação Flask. Verifiquei o registro das rotas, executei o sistema e testei as páginas pelo navegador. Também realizei testes de cadastro e edição de autores.
+
+**Dificuldade encontrada:** Conferir se todos os controllers estavam integrados corretamente e se as rotas estavam funcionando.
+
+**Como resolvi:** Verifiquei os imports e os Blueprints, executei a aplicação e testei as funcionalidades pelo navegador. Todas as páginas testadas funcionaram normalmente.
+
+**Próximo passo:** Realizar a revisão geral do sistema, verificar as funcionalidades de empréstimos e corrigir possíveis problemas antes da entrega.
