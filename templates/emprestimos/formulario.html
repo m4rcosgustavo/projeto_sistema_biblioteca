@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Novo Empréstimo{% endblock %}
+
+{% block content %}
+
+<h1>Novo Empréstimo</h1>
+
+<form method="POST">
+
+    <label>Selecione o livro:</label>
+    <select name="livro_id" required>
+        <option value="">Escolha um livro</option>
+
+        {% for livro in livros %}
+        <option value="{{ livro.id }}">
+            {{ livro.titulo }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <label>Selecione o leitor:</label>
+    <select name="leitor_id" required>
+        <option value="">Escolha um leitor</option>
+
+        {% for leitor in leitores %}
+        <option value="{{ leitor.id }}">
+            {{ leitor.nome }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button type="submit">Registrar empréstimo</button>
+
+</form>
+
+{% endblock %}

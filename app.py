@@ -14,6 +14,7 @@ from controllers import (
 import controllers.autores
 import controllers.livros
 import controllers.leitores
+import controllers.emprestimos
 
 
 def criar_app():
