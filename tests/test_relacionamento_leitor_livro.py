@@ -76,6 +76,17 @@ def test_leitor_pode_ter_varios_livros_e_livro_pode_ter_varios_leitores():
             assert emprestimo3.leitor_id == leitor2.id
             assert emprestimo3.livro_id == livro1.id
 
+            db.session.commit()
+            
+            leitor_salvo = db.session.get(Leitor, leitor1.id)
+            livro_salvo = db.session.get(Livro, livro1.id)
+
+            assert leitor_salvo is not None
+            assert livro_salvo is not None
+
+            assert len(leitor_salvo.emprestimos) == 2
+            assert len(livro_salvo.emprestimos) == 2
+
         finally:
             db.session.rollback()
             db.session.remove()
