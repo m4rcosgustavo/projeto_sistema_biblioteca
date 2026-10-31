@@ -97,3 +97,26 @@ Utilizei os relacionamentos existentes nos modelos SQLAlchemy para exibir as inf
 **Próximo passo:**
 Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
+## Registro 8 — Sexta-feira (30/10/2026)
+
+**Aluno:** Jullyane Sandra
+
+**O que foi feito:** Implementei as funcionalidades de empréstimos no sistema. Desenvolvi o registro de novos empréstimos, a listagem dos registros e as consultas por livro e leitor. Também adicionei a verificação para impedir que um livro com empréstimo pendente seja emprestado novamente. Depois, implementei as opções de devolução, com registro da data, e exclusão dos empréstimos.
+
+**Dificuldade encontrada:** Tive dificuldade para fazer a tela de novo empréstimo abrir corretamente e para fazer os registros aparecerem na listagem. Também encontrei problemas na organização dos arquivos HTML.
+
+**Como resolvi:** Verifiquei as rotas e os templates e identifiquei que o conteúdo da listagem estava no arquivo do formulário. Separei os conteúdos nos arquivos corretos, ajustei as funcionalidades e testei novamente o sistema. Depois, confirmei o funcionamento do registro e da listagem dos empréstimos.
+
+**Próximo passo:** Atualizar o README.md e o DIARIO.md, revisar a documentação e conferir o projeto antes da entrega.
+
+## Registro 9 — Sábado (31/10/2026)
+
+**Aluno:** Jullyane Sandra
+
+**O que foi feito:** Atualizei a documentação do Sistema de Biblioteca. Organizei o README.md com a descrição do projeto, integrantes, responsabilidades, tecnologias, entidades, relacionamentos, funcionalidades e instruções para executar a aplicação. Também atualizei o DIARIO.md, registrando as atividades realizadas durante o desenvolvimento. Revisei os arquivos relacionados à minha parte e conferi o funcionamento das funcionalidades de empréstimos.
+
+**Dificuldade encontrada:** Organizar as informações de forma clara e registrar as atividades sem deixar de considerar as dificuldades encontradas durante o desenvolvimento.
+
+**Como resolvi:** Consultei o plano de trabalho, os arquivos do projeto e as funcionalidades implementadas para atualizar a documentação de acordo com o desenvolvimento realizado.
+
+**Próximo passo:** Finalizar a conferência geral do projeto junto com os demais integrantes e verificar se todos os arquivos e alterações estão disponíveis no GitHub.

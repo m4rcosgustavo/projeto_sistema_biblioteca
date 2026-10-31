@@ -1,61 +1,145 @@
-
 # Sistema de Biblioteca
 
-Projeto desenvolvido em grupo para organizar autores, livros, leitores e empréstimos, utilizando Python, Flask e SQLite.
+Projeto desenvolvido em grupo para a disciplina de Programação para Servidores Web (PSI), utilizando Python, Flask, SQLAlchemy e SQLite.
 
-## Objetivo
+## 1. Tema e objetivo
 
-Desenvolver um sistema para organizar os livros da biblioteca, cadastrar leitores e registrar empréstimos e devoluções.
+O tema escolhido foi **Sistema de Biblioteca**. O objetivo é organizar autores, livros e leitores, permitindo registrar empréstimos, consultar os registros e controlar as devoluções.
 
-## Tecnologias utilizadas
+## 2. Integrantes e responsabilidades
+
+- **Marcos Gustavo:** estrutura MVC, configuração da aplicação e integração das rotas.
+- **Heloisa Pereira:** banco de dados, modelos e relacionamentos.
+- **Maria Luiza:** interfaces, formulários e telas de cadastro.
+- **Jullyane Sandra:** funcionalidades de empréstimos, consultas e documentação.
+
+## 3. Tecnologias utilizadas
 
 - Python
 - Flask
 - Flask-SQLAlchemy
+- SQLAlchemy ORM
 - SQLite
-- HTML e CSS
+- HTML
+- CSS
+- Jinja2
 
-## Funcionalidades do sistema
+## 4. Entidades do sistema
+
+O sistema utiliza quatro modelos:
+
+- **Autor:** armazena os dados dos autores.
+- **Livro:** armazena título, gênero, ano de publicação e autor relacionado.
+- **Leitor:** armazena nome e e-mail dos leitores.
+- **Empréstimo:** registra o leitor, o livro, a data do empréstimo e a data da devolução.
+
+## 5. Relacionamentos
+
+### Relacionamento 1:N — Autor e Livro
+
+Um autor pode possuir vários livros cadastrados, mas cada livro está relacionado a um autor. Esse relacionamento é feito por meio da chave estrangeira `autor_id` no modelo Livro.
+
+### Relacionamento N:N — Leitor e Livro
+
+Um leitor pode pegar vários livros emprestados e um mesmo livro pode ser emprestado a diferentes leitores ao longo do tempo.
+
+Esse relacionamento é representado pelo modelo intermediário `Emprestimo`, que armazena as chaves estrangeiras `leitor_id` e `livro_id`, além das datas do empréstimo e da devolução.
+
+## 6. Funcionalidades
 
 - Cadastro e consulta de autores.
-- Cadastro e consulta de livros.
-- Cadastro e consulta de leitores.
-- Registro e remoção de empréstimos.
-- Consulta dos empréstimos e registro de devoluções.
+- Cadastro, edição e consulta de livros.
+- Cadastro, edição e consulta de leitores.
+- Registro de empréstimos.
+- Listagem dos empréstimos realizados.
+- Consulta de empréstimos por livro e por leitor.
+- Verificação de empréstimos pendentes, evitando registrar novamente um livro que ainda não foi devolvido.
+- Registro da devolução com a data correspondente.
+- Exclusão de registros de empréstimos.
 
-## Estrutura do projeto
+## 7. Estrutura do projeto
 
-- `app.py`: inicialização da aplicação.
-- `database.py`: configuração do banco de dados.
-- `models/`: modelos de autores, livros, leitores e empréstimos.
-- `controllers/`: rotas e lógica das funcionalidades.
-- `templates/`: páginas HTML.
-- `static/`: arquivos CSS.
-- `seed.py`: dados iniciais para testes.
-- `README.md`: documentação do projeto.
-- `DIARIO.md`: diário de desenvolvimento.
+```text
+projeto_sistema_biblioteca/
+│
+├── app.py
+├── database.py
+├── seed.py
+├── requirements.txt
+├── README.md
+├── DIARIO.md
+│
+├── controllers/
+│   ├── __init__.py
+│   ├── autores.py
+│   ├── livros.py
+│   ├── leitores.py
+│   └── emprestimos.py
+│
+├── models/
+│   ├── __init__.py
+│   ├── autor.py
+│   ├── livro.py
+│   ├── leitor.py
+│   └── emprestimo.py
+│
+├── templates/
+│   ├── base.html
+│   ├── inicio.html
+│   ├── autores/
+│   ├── livros/
+│   ├── leitores/
+│   └── emprestimos/
+│
+├── static/
+│   └── style.css
+│
+└── tests/
+    ├── test_relacionamento_autor_livro.py
+    └── test_relacionamento_leitor_livro.py
+```
 
-## Como executar
+## 8. Como instalar e executar
 
-1. Instale as dependências:
+### Pré-requisitos
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Python 3 instalado.
+- Git instalado.
 
-2. Execute a aplicação:
+### Instalar as dependências
 
-   ```bash
-   python app.py
-   ```
+No terminal, dentro da pasta do projeto, execute:
 
-3. Acesse no navegador:
+```bash
+pip install -r requirements.txt
+```
 
-   `http://127.0.0.1:5000`
+### Criar o banco de dados
 
-## Integrantes e responsabilidades
+O banco SQLite é configurado na aplicação. As tabelas são criadas automaticamente quando a aplicação é inicializada, por meio de `db.create_all()`.
 
-- Marcos Gustavo: estrutura e integração.
-- Heloisa Pereira: banco de dados e modelos.
-- Maria Luiza: interfaces e cadastros.
-- Jullyane Sandra: empréstimos e documentação.
+O arquivo `seed.py` está reservado para dados iniciais. Como não há dados iniciais implementados nele, os primeiros autores, livros e leitores devem ser cadastrados pelas telas do sistema.
+
+### Executar a aplicação
+
+```bash
+python app.py
+```
+
+Depois, acesse no navegador:
+
+```text
+http://127.0.0.1:5000
+```
+
+## 9. Principais dificuldades
+
+Durante o desenvolvimento, foram encontrados problemas na organização dos arquivos de listagem e formulário de empréstimos. O conteúdo da listagem estava no arquivo do formulário, fazendo com que a tela de novo empréstimo não abrisse corretamente.
+
+Também foi necessário conferir o funcionamento das rotas, dos relacionamentos e da persistência dos registros no banco de dados.
+
+As correções foram realizadas separando corretamente os templates, conferindo os endereços das rotas e testando o cadastro e a listagem dos empréstimos.
+
+## 10. Declaração de autoria e uso de IA
+
+O projeto foi desenvolvido em grupo, com divisão de tarefas entre os integrantes. Foram utilizadas ferramentas de IA como apoio para tirar dúvidas, auxiliar na identificação de erros e organizar a documentação. Os integrantes devem revisar o código e compreender as funcionalidades que desenvolveram, sendo responsáveis pelo trabalho entregue.
