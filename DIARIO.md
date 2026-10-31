@@ -99,7 +99,7 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 ## Registro 8 — Sexta-feira (30/10/2026)
 
-**Aluno:** Jullyane Sandra
+**Aluno:** Maria Luiza
 
 **O que foi feito:** Implementei as funcionalidades de empréstimos no sistema. Desenvolvi o registro de novos empréstimos, a listagem dos registros e as consultas por livro e leitor. Também adicionei a verificação para impedir que um livro com empréstimo pendente seja emprestado novamente. Depois, implementei as opções de devolução, com registro da data, e exclusão dos empréstimos.
 
@@ -111,7 +111,7 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 ## Registro 9 — Sábado (31/10/2026)
 
-**Aluno:** Jullyane Sandra
+**Aluno:** Maria Luiza
 
 **O que foi feito:** Atualizei a documentação do Sistema de Biblioteca. Organizei o README.md com a descrição do projeto, integrantes, responsabilidades, tecnologias, entidades, relacionamentos, funcionalidades e instruções para executar a aplicação. Também atualizei o DIARIO.md, registrando as atividades realizadas durante o desenvolvimento. Revisei os arquivos relacionados à minha parte e conferi o funcionamento das funcionalidades de empréstimos.
 
