@@ -30,6 +30,7 @@
                 <th>Livro</th>
                 <th>Data do empréstimo</th>
                 <th>Data da devolução</th>
+                <th>Ações</th>
             </tr>
         </thead>
 
@@ -49,6 +50,27 @@
                     {% else %}
                         <span class="status-pendente">Pendente</span>
                     {% endif %}
+                </td>
+
+                <td>
+                    {% if not emprestimo.data_devolucao %}
+                        <form method="POST"
+                              action="{{ url_for('emprestimos.devolver_emprestimo', id=emprestimo.id) }}">
+                            <button type="submit">
+                                Devolver
+                            </button>
+                        </form>
+                    {% else %}
+                        <span>Devolvido</span>
+                    {% endif %}
+
+                    <form method="POST"
+                          action="{{ url_for('emprestimos.excluir_emprestimo', id=emprestimo.id) }}"
+                          onsubmit="return confirm('Deseja realmente excluir este empréstimo?')">
+                        <button type="submit">
+                            Excluir
+                        </button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}
