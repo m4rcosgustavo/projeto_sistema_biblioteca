@@ -145,6 +145,20 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 **Dificuldade encontrada:** Verificar se todas as áreas do sistema estavam organizadas e disponíveis na estrutura do projeto.
 
+## Registro 13 — Sábado (31/10/2026)
+
+**Atividade relacionada à responsabilidade de:** Jullyane Sandra
+
+**Responsável pela execução da revisão:** Marcos Gustavo da Silva Araújo
+
+**O que foi feito:** Realizei a conferência dos arquivos relacionados à documentação e à preparação dos dados iniciais do Sistema de Biblioteca, incluindo `README.md`, `DIARIO.md` e `seed.py`.
+
+**Dificuldade encontrada:** Conferir se as informações documentadas correspondiam às funcionalidades e à estrutura atual do projeto.
+
+**Como resolvi:** Revisei a documentação, conferi o arquivo de povoamento do banco de dados e considerei a execução anterior do `seed.py`, que apresentou os registros cadastrados com sucesso.
+
+**Próximo passo:** Manter a documentação atualizada e garantir que as instruções de execução e os dados iniciais estejam disponíveis para utilização do sistema.
+
 **Como resolvi:** Acessei a pasta `templates` pelo GitHub e conferi a presença das pastas e dos arquivos responsáveis pelas interfaces.
 
 **Próximo passo:** Manter as interfaces organizadas e verificar seu funcionamento sempre que forem realizadas novas alterações no sistema.
