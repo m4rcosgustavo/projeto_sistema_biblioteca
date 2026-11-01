@@ -120,3 +120,17 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 **Como resolvi:** Consultei o plano de trabalho, os arquivos do projeto e as funcionalidades implementadas para atualizar a documentação de acordo com o desenvolvimento realizado.
 
 **Próximo passo:** Finalizar a conferência geral do projeto junto com os demais integrantes e verificar se todos os arquivos e alterações estão disponíveis no GitHub.
+
+## Registro 10 — Sábado (31/10/2026)
+
+**Data:** 31/10/2026
+
+**Aluno:** Marcos Gustavo da Silva Araújo
+
+**O que foi feito:** Realizei a revisão geral da integração do Sistema de Biblioteca. Executei a aplicação e conferi as telas de livros e empréstimos, verificando a apresentação dos registros e as funcionalidades disponíveis. Também executei os testes automatizados dos relacionamentos entre Autor e Livro e entre Leitor e Livro.
+
+**Dificuldade encontrada:** Foi necessário verificar se os dados cadastrados estavam sendo apresentados corretamente e conferir se os relacionamentos do banco de dados estavam funcionando como esperado.
+
+**Como resolvi:** Executei o arquivo `seed.py` para popular o banco de dados, conferi as telas pelo navegador e executei os testes com `python -m pytest -v`, obtendo dois testes aprovados.
+
+**Próximo passo:** Finalizar a conferência dos arquivos do projeto e realizar o commit final no GitHub.
