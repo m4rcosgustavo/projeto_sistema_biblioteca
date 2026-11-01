@@ -135,6 +135,20 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 **Próximo passo:** Finalizar a conferência dos arquivos do projeto e realizar o commit final no GitHub.
 
+## Registro 11 — Sábado (31/10/2026)
+
+**Atividade relacionada à responsabilidade de:** Heloisa Pereira
+
+**Responsável pela execução da revisão:** Marcos Gustavo da Silva Araújo
+
+**O que foi feito:** Realizei a conferência dos testes automatizados dos relacionamentos do banco de dados, verificando os arquivos responsáveis pelos relacionamentos 1:N entre Autor e Livro e N:N entre Leitor e Livro.
+
+**Dificuldade encontrada:** Verificar se os testes estavam organizados corretamente e se contemplavam os relacionamentos definidos para o sistema.
+
+**Como resolvi:** Conferi os arquivos da pasta `tests` diretamente no GitHub e considerei também a execução anterior dos testes, que apresentou dois testes aprovados.
+
+**Próximo passo:** Manter os testes disponíveis para futuras verificações do funcionamento do banco de dados.
+
 ## Registro 12 — Sábado (31/10/2026)
 
 **Atividade relacionada à responsabilidade de:** Maria Luiza
