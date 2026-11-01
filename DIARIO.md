@@ -139,8 +139,6 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 **Atividade relacionada à responsabilidade de:** Heloisa Pereira
 
-**Responsável pela execução da revisão:** Marcos Gustavo da Silva Araújo
-
 **O que foi feito:** Realizei a conferência dos testes automatizados dos relacionamentos do banco de dados, verificando os arquivos responsáveis pelos relacionamentos 1:N entre Autor e Livro e N:N entre Leitor e Livro.
 
 **Dificuldade encontrada:** Verificar se os testes estavam organizados corretamente e se contemplavam os relacionamentos definidos para o sistema.
@@ -153,8 +151,6 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 **Atividade relacionada à responsabilidade de:** Maria Luiza
 
-**Responsável pela execução da revisão:** Marcos Gustavo da Silva Araújo
-
 **O que foi feito:** Realizei a revisão da estrutura das interfaces do Sistema de Biblioteca, conferindo a organização dos templates de autores, livros, leitores e empréstimos, além dos arquivos `base.html` e `inicio.html`.
 
 **Dificuldade encontrada:** Verificar se todas as áreas do sistema estavam organizadas e disponíveis na estrutura do projeto.
@@ -162,8 +158,6 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 ## Registro 13 — Sábado (31/10/2026)
 
 **Atividade relacionada à responsabilidade de:** Jullyane Sandra
-
-**Responsável pela execução da revisão:** Marcos Gustavo da Silva Araújo
 
 **O que foi feito:** Realizei a conferência dos arquivos relacionados à documentação e à preparação dos dados iniciais do Sistema de Biblioteca, incluindo `README.md`, `DIARIO.md` e `seed.py`.
 
