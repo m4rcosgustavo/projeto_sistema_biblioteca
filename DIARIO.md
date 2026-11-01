@@ -135,16 +135,16 @@ Testar as interfaces integradas à funcionalidade de registro de empréstimos.
 
 **Próximo passo:** Finalizar a conferência dos arquivos do projeto e realizar o commit final no GitHub.
 
-Registro 12 — Sábado (31/10/2026)
+## Registro 12 — Sábado (31/10/2026)
 
-Atividade relacionada à responsabilidade de: Maria Luiza
+**Atividade relacionada à responsabilidade de:** Maria Luiza
 
-Responsável pela execução da revisão: Marcos Gustavo da Silva Araújo
+**Responsável pela execução da revisão:** Marcos Gustavo da Silva Araújo
 
-O que foi feito: Realizei a revisão da estrutura das interfaces do Sistema de Biblioteca, conferindo a organização dos templates de autores, livros, leitores e empréstimos, além dos arquivos base.html e inicio.html.
+**O que foi feito:** Realizei a revisão da estrutura das interfaces do Sistema de Biblioteca, conferindo a organização dos templates de autores, livros, leitores e empréstimos, além dos arquivos `base.html` e `inicio.html`.
 
-Dificuldade encontrada: Verificar se todas as áreas do sistema estavam organizadas e disponíveis na estrutura do projeto.
+**Dificuldade encontrada:** Verificar se todas as áreas do sistema estavam organizadas e disponíveis na estrutura do projeto.
 
-Como resolvi: Acessei a pasta templates pelo GitHub e conferi a presença das pastas e dos arquivos responsáveis pelas interfaces.
+**Como resolvi:** Acessei a pasta `templates` pelo GitHub e conferi a presença das pastas e dos arquivos responsáveis pelas interfaces.
 
-Próximo passo: Manter as interfaces organizadas e verificar seu funcionamento sempre que forem realizadas novas alterações no sistema.
+**Próximo passo:** Manter as interfaces organizadas e verificar seu funcionamento sempre que forem realizadas novas alterações no sistema.
